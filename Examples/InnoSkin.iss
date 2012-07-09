@@ -20,6 +20,7 @@ Name: "{group}\My Program"; Filename: "{app}\MyProg.exe"
 [Code]
 procedure InitializeWizard;
 begin
-  WizardForm.SkinManager.SkinDirectory := 'c:\Users\Public\Documents\AlphaSkins\Skins';
+  ExtractTemporaryFile('Garnet.asz');
+  WizardForm.SkinManager.SkinDirectory := ExpandConstant('{tmp}');
   WizardForm.SkinManager.SkinName := 'Garnet';
 end;
